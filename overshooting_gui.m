@@ -65,7 +65,7 @@ set(sigma,'String',(sigma_v));
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = overshooting_gui_OutputFcn(hObject, eventdata, handles)
+function varargout = overshooting_gui_OutputFcn(hObject, eventdata, handles) 
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
@@ -119,7 +119,7 @@ st = 0 : 1 : limit;
 
 axes(handles.axes1);
 
-% Ceroclina del sistema es pt =
+% Ceroclina del sistema es pt = 
 p_fase = (delta / ((sigma/lambda) + delta))*(st -sss) + pss;
 
 plot([0 limit],[pss pss],'--b',st,p_fase,':r',sss,pss,'*m','LineWidth',2); hold on;
@@ -156,19 +156,19 @@ Pt = getNumberValue('p0');
 i=1;
 while i<60;
     %agregamos el punto anterior
-    if St < limit && Pt < limit && St >= 0 && Pt >= 0-2
-
+    if St < limit && Pt < limit && St >= 0 && Pt >= 0-2 
+        
         %Plotting path
         axes(handles.axes1);
         plot(St,Pt,'*g');
-
+        
         %Plotting cambios en S y P
         axes(handles.axes2);
         plot(i-1,St,'*r','LineWidth',1);
         grid on;
         xlabel(handles.axes2,'Time Step')
         ylabel(handles.axes2,'Tipo de cambio')
-
+        
         axes(handles.axes3);
         plot(i-1,Pt,'*r','LineWidth',1);
         grid on;
@@ -180,7 +180,7 @@ while i<60;
         Mt = (A*[Pt;St] + b)*smoothening;
         Pt = Mt(1,1) + Pt;
         St = Mt(2,1) + St;
-
+        
         %pausamos el computo 0.15 segundos
         pause(0.15)
     else
@@ -264,19 +264,19 @@ Pt =  (St - Sss)*(lambda*tau2) + Pss;
 i=1;
 while i<60;
     %agregamos el punto anterior
-    if St < limit && Pt < limit && St >= 0 && Pt >= -2
-
+    if St < limit && Pt < limit && St >= 0 && Pt >= -2  
+        
         %Plotting path
         axes(handles.axes1);
         plot(St,Pt,'*g');
-
+        
         %Plotting cambios en S y P
         axes(handles.axes2);
         plot(i-1,St,'*r','LineWidth',1);
         grid on;
         xlabel(handles.axes2,'Time Step')
         ylabel(handles.axes2,'Tipo de cambio')
-
+        
         axes(handles.axes3);
         plot(i-1,Pt,'*r','LineWidth',1);
         grid on;
@@ -288,7 +288,7 @@ while i<60;
         Mt = (A*[Pt;St] + b)*smoothening;
         Pt = Mt(1,1) + Pt;
         St = Mt(2,1) + St;
-
+        
         %pausamos el computo 0.15 segundos
         pause(0.15)
     else
@@ -335,7 +335,7 @@ st = 0 : 1 : limit;
 
 axes(handles.axes1);
 
-% Ceroclina del sistema es pt =
+% Ceroclina del sistema es pt = 
 p_fase = (delta / ((sigma/lambda) + delta))*(st -sss) + pss;
 
 plot([0 limit],[pss pss],'--b',st,p_fase,':r',sss,pss,'*m','LineWidth',2); hold on;
@@ -352,8 +352,8 @@ p_saddle = (st - sss + (1/(lambda*tau2))*pss)*(lambda*tau2);
 
 plot(st,p_saddle,':y','LineWidth',3); hold on;
 
-St = sss_old
-Pt = pss_old
+St = sss_old;
+Pt = pss_old;
 
 
 i=1;
@@ -370,7 +370,7 @@ while i<60;
     grid on;
     xlabel(handles.axes3,'Time Step')
     ylabel(handles.axes3,'Precios domesticos')
-
+    
     %agregamos el punto anterior
     axes(handles.axes1);
     if i == 1
@@ -684,3 +684,5 @@ function m_nuevo_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
