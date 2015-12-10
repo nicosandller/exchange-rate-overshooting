@@ -99,7 +99,7 @@ delta = getNumberValue('delta_i');
 sigma = getNumberValue('sigma_i');
 alpha = getNumberValue('alpha_i');
 
-limit = 6;
+limit = 5;
 %Determinando la matriz A y b
 A = [(-alpha)*(delta + sigma/lambda) alpha*delta; 1/lambda 0];
 b = [alpha*((sigma*m)*(1/lambda) - (1 + (sigma*theta)*(1/lambda))*ybar) ; (1/lambda)*(theta*ybar - m) - istar];
@@ -144,7 +144,7 @@ delta = getNumberValue('delta_i');
 sigma = getNumberValue('sigma_i');
 alpha = getNumberValue('alpha_i');
 
-limit = 6;
+limit = 5;
 %Determinando la matriz A y b
 A = [(-alpha)*(delta + sigma/lambda) alpha*delta; 1/lambda 0];
 b = [alpha*((sigma*m)*(1/lambda) - (1 + (sigma*theta)*(1/lambda))*ybar) ; (1/lambda)*(theta*ybar - m) - istar];
@@ -156,7 +156,7 @@ Pt = getNumberValue('p0');
 i=1;
 while i<60;
     %agregamos el punto anterior
-    if St < limit && Pt < limit && St >= 0 && Pt >= 0-2 
+    if St <= limit && Pt <= limit && St >= 0 && Pt >=-3 
         
         %Plotting path
         axes(handles.axes1);
@@ -201,7 +201,7 @@ delta = getNumberValue('delta_i');
 sigma = getNumberValue('sigma_i');
 alpha = getNumberValue('alpha_i');
 
-limit = 6;
+limit = 5;
 %Determinando la matriz A y b
 A = [(-alpha)*(delta + sigma/lambda) alpha*delta; 1/lambda 0];
 b = [alpha*((sigma*m)*(1/lambda) - (1 + (sigma*theta)*(1/lambda))*ybar) ; (1/lambda)*(theta*ybar - m) - istar];
@@ -237,7 +237,7 @@ delta = getNumberValue('delta_i');
 sigma = getNumberValue('sigma_i');
 alpha = getNumberValue('alpha_i');
 
-limit = 6;
+limit = 5;
 %Condiciones Iniciales
 St = getNumberValue('S0_saddle');
 
@@ -247,8 +247,8 @@ b = [alpha*((sigma*m)*(1/lambda) - (1 + (sigma*theta)*(1/lambda))*ybar) ; (1/lam
 Mss = -(A^-1)*b;
 
 % Valores de Estado Estacionario
-Pss = getNumberValue('pss')
-Sss = getNumberValue('sss')
+Pss = getNumberValue('pss');
+Sss = getNumberValue('sss');
 
 %Calculando las raices
 trA = -alpha*(delta + (sigma/lambda));
@@ -264,7 +264,7 @@ Pt =  (St - Sss)*(lambda*tau2) + Pss;
 i=1;
 while i<60;
     %agregamos el punto anterior
-    if St < limit && Pt < limit && St >= 0 && Pt >= -2  
+    if St <= limit && Pt <= limit && St >= 0 && Pt >=-3  
         
         %Plotting path
         axes(handles.axes1);
@@ -313,7 +313,7 @@ delta = getNumberValue('delta_i');
 sigma = getNumberValue('sigma_i');
 alpha = getNumberValue('alpha_i');
 
-limit = 6;
+limit = 5;
 %Determinando la matriz A y b
 A = [(-alpha)*(delta + sigma/lambda) alpha*delta; 1/lambda 0];
 b = [alpha*((sigma*m)*(1/lambda) - (1 + (sigma*theta)*(1/lambda))*ybar) ; (1/lambda)*(theta*ybar - m) - istar];
