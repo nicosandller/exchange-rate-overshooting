@@ -1,5 +1,5 @@
 # exchange_rate_overshooting
-A matlab GUI implementation of Rudi Dornbusch's model on exchange rate overshooting
+A matlab implementation of Rudi Dornbusch's model on exchange rate overshooting
 
 To run GUI type 
 
