@@ -3,7 +3,9 @@ A matlab implementation of Rudi Dornbusch's model on exchange rate overshooting
 
 To run GUI type 
 
+```MATLAB
 >> overshooting_gui.m
+```
 
 on matlab command line
 
